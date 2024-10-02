@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 
 posts = [
   {
@@ -47,3 +48,6 @@ def post(request, id):
     else:
         return HttpResponseNotFound("Post Not Available")
     
+def findPost(request, id):
+    url = reverse('post', args=[id])
+    return HttpResponseRedirect(url)
