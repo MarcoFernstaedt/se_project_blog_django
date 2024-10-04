@@ -33,7 +33,7 @@ posts = [
 
 # Create your views here.
 def home(request):
-    return HttpResponse(posts)
+    return render(request, 'home.html')
 
 def post(request, id):
     id_isValid = False
