@@ -35,7 +35,7 @@ posts = [
 def home(request):
     return render(request, 'home.html')
 
-def post(request, id):
+def getPostById(request, id):
     id_isValid = False
     for post in posts:
         if post['id'] == id:
